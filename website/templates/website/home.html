@@ -45,7 +45,7 @@
                 <!-- nav -->
                 <nav class="py-4">
                     <div id="logo">
-                        <h1> <a href="{% url 'home' %}"></a>Macaroni</a></h1>
+                        <h1> <a href="{% url 'home' %}"><a>Macaroni</a></h1>
                     </div>
 
                     <label for="drop" class="toggle">Menu</label>
@@ -90,12 +90,14 @@
         
         <div class="container pb-lg-3">
             <h3 class="tittle text-center">New Items</h3>
-             
-            <div class="row">
+
+            <div class="row " >
+                <hr>
                 {% for product in products %}
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe text-center">
+                <div class="col-md-4 product-men ">
+                    <div class="product-shoe-info shoe text-center hovering">
                         <div class="men-thumb-item">
+
                             <img src=" {{product.image.url}}" class="img-fluid" alt="">
                             <span class="product-new-top">New</span>
                         </div>
@@ -116,6 +118,7 @@
                                 <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
                                 <li><a href="#"><span class="fa fa-star-o" aria-hidden="true"></span></a></li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -205,7 +208,21 @@
                 <div class="col-lg-4 footer-grid_section_w3layouts">
                     <h2 class="logo-2 mb-lg-4 mb-3">
                         <a href="{% url 'home' %}">Macaroni</a>
+
                     </h2>
+                    <script type="text/javascript">
+                        amzn_assoc_placement = "adunit0";
+                        amzn_assoc_tracking_id = "rostishka13-20";
+                        amzn_assoc_ad_mode = "search";
+                        amzn_assoc_ad_type = "smart";
+                        amzn_assoc_marketplace = "amazon";
+                        amzn_assoc_region = "US";
+                        amzn_assoc_default_search_phrase = "french macarons";
+                        amzn_assoc_default_category = "All";
+                        amzn_assoc_linkid = "3bf3372a9f559534d941d1e29becc564";
+                        amzn_assoc_design = "in_content";
+                    </script>
+                    <script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <h4 class="sub-con-fo ad-info my-4">Catch on Social</h4>
                     <ul class="w3layouts_social_list list-unstyled">
