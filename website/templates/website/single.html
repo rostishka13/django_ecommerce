@@ -14,19 +14,18 @@
     <!-- banner -->
     <section class="ab-info-main py-md-5">
         <div class="container py-md-3">
-            <h3 class="tittle text-center mb-lg-5 mb-3"> Single Page</h3>
+            <h3 class="tittle text-center mb-lg-5 mb-3"> {{post.title}}</h3>
             <div class="speak px-lg-5">
                 <div class="row mt-lg-5 mt-4">
                     <div class="col-md-12 events-img">
-                        <img src="{% static 'images/single1.jpg' %}" class="img-fluid" alt="user-image" />
+                        <img src="{{post.image.url}}" class="img-fluid" alt="user-image" />
                     </div>
                     <div class="col-md-12 events-info my-3">
-                        <h3><span class="sub-tittle">01</span> Tech beauty</h3>
+                        <h3><span class="sub-tittle">01</span> {{post.title}}</h3>
                         <h4 class="my-3"><a href="#" class="text-dark">VIVAMUS ID TEMPOR FELIS. CRAS SAGITTIS MI SIT AMET</a></h4>
-                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p>{{post.published_date}}</p>
                     </div>
-                    <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat..</p>
-                    <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat..</p>
+                    {{post.text}}
                 </div>
                 <div class="row my-lg-5 my-3">
                     <div class="col-md-6 text-info">

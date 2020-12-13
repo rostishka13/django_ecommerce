@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from .models import *
 from django.core.mail import send_mail
 
@@ -14,7 +14,9 @@ def about(request):
 
 
 def blog(request):
-	context = {}
+	
+	posts = Blog.objects.all()
+	context = {'posts': posts}
 	return render(request, 'website/blog.html', context)
 
 
@@ -24,29 +26,50 @@ def contact(request):
 		email =request.POST['Email']
 		phone = request.POST['Phone_number']
 		message = request.POST['Message']
-		return render(request, 'website/contact.html', {'name':name, 'email': email, 'phone':phone,'message':message })
+		
 
 		#send an email 
+		
+
+
 		send_mail(
 			'message from, ' + name, # subject
 			message, # message
 			email, # from email
-			['rostishka1@gmail.com', 'rostyslav.tykhovski@gmail.com'], # to email
-
+			['myemail@gmail.com']
 			)
-
+		return render(request, 'website/contact.html', {'name':name, 'email': email, 'phone':phone,'message':message })
 	else:
 		
 		return render(request, 'website/contact.html')
 
 def shop(request):
-	context = {}
+	products = Product.objects.all()
+	context = {'products':products}
 	return render(request, 'website/shop.html', context)
-
-def single(request):
-	context = {}
+#single post of blog
+def single(request, pk):
+	post = get_object_or_404(Blog, pk = pk)
+	context = {'post': post}
 	return render(request, 'website/single.html', context)
-
-def single_shop(request):
-	context = {}
+# single product
+def single_shop(request,pk):
+	product = get_object_or_404(Product, pk = pk)
+	context = {'product': product}
 	return render(request, 'website/shop-single.html', context)
+
+def gallery(request):
+	products = Product.objects.all()
+	context = {'products': products}
+	
+	return render(request, 'website/gallery.html', context)
+
+
+def policy(request):
+	context = {}
+	return render(request, 'website/policy.html', context)
+
+def shipping(request):
+	context = {}
+	return render(request, 'website/shipping.html', context)
+

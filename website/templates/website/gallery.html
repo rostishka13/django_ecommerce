@@ -1,0 +1,32 @@
+{% extends 'website/main.html' %}
+{% load static %}
+{%block content%}
+<center>
+	<br>
+	<h1>Macarons</h1>
+	<br>
+</center>
+
+
+{% for product in products %}
+ <center>
+                <div class="col-md-4 product-men ">
+                    <div class="product-shoe-info shoe text-center hovering">
+
+                        <div class="men-thumb-item">
+                       
+                            <img  style = " display: inline-block;"src=" {{product.image.url}}" class="img-fluid" alt="">
+                            
+                        </div>
+                      
+                        <div class="item-info-product">
+                            <h4>
+                                <a href="{% url 'single_shop' %}">{{product.title}} </a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+   </center>
+                
+                  {% endfor%}
+{% endblock%}

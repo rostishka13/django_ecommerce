@@ -132,8 +132,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
  #email setting
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = '1025'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_USE_TLS = False  
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER ='mymail@gmail.com'
+EMAIL_HOST_PASSWORD = 'mypassword'

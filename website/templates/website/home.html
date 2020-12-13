@@ -62,7 +62,7 @@
                             <ul>
                                 <li><a href="{% url 'blog' %}">Blog</a></li>
                                 <li><a href="{% url 'shop' %}">Shop Now</a></li>
-                                <li><a href="{% url 'single' %}">Single Page</a></li>
+                                <li><a href="#">Single Page</a></li>
                             </ul>
                         </li>
                         <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -77,8 +77,8 @@
             <p>Best macarons in the world</p>
             <h3 class="mb-4">Macarons for you</h3>
             <div class="ban-buttons">
-                <a href="{% url 'single_shop' %}" class="btn">Shop Now</a>
-                <a href="{% url 'single' %}" class="btn active">Read More</a>
+               <a href="#" class="btn active">Read More</a>
+               <<a href="{% url 'shop' %}" class="btn">Shop Now</a>
             </div>
         </div>
         <!--// banner-inner -->
@@ -103,7 +103,7 @@
                         </div>
                         <div class="item-info-product">
                             <h4>
-                                <a href="{% url 'single_shop' %}">{{product.title}} </a>
+                                <a href="#">{{product.title}} </a>
                             </h4>
 
                             <div class="product_price">
@@ -270,7 +270,7 @@
                                     <a href="{% url 'about' %}">About Us</a>
                                 </li>
                                 <li class="mt-3">
-                                    <a href="#">Gallery</a>
+                                    <a href="{% url 'gallery' %}">Gallery</a>
                                 </li>
                                 <li class="mt-3">
                                     <a href="#">Services</a>
@@ -290,7 +290,7 @@
                                         <a href="{% url 'about' %}">About Us</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="#">Delivery & Returns</a>
+                                        <a href="{% url 'shipping' %}">Delivery & Returns</a>
                                     </li>
                                     <li class="mt-3">
                                         <a href="#">Waranty</a>
@@ -299,7 +299,7 @@
                                         <a href="#">Terms & Condition</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="#">Privacy Plolicy</a>
+                                        <a href="{% url 'policy' %}">Privacy Plolicy</a>
                                     </li>
                                 </ul>
                             </div>
