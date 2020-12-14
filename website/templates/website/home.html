@@ -103,7 +103,7 @@
                         </div>
                         <div class="item-info-product">
                             <h4>
-                                <a href="#">{{product.title}} </a>
+                                <a href="{% url 'single_shop' pk=product.pk %}">{{product.title}} </a>
                             </h4>
 
                             <div class="product_price">
@@ -111,18 +111,13 @@
                                     <span class="money">${{product.price}}</span>
                                 </div>
                             </div>
-                            <ul class="stars">
-                                <li><a href="#"><span class="fa fa-star" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star-half-o" aria-hidden="true"></span></a></li>
-                                <li><a href="#"><span class="fa fa-star-o" aria-hidden="true"></span></a></li>
-                            </ul>
+                            
 
                         </div>
                     </div>
+                    <br>
                 </div>
-                
+                <br>
                   {% endfor%}
                 
             </div>
@@ -135,31 +130,10 @@
     <section class="testimonials py-5">
         <div class="container">
             <div class="test-info text-center">
-                <h3 class="my-md-2 my-3">Jenifer Burns</h3>
+                <h3 class="my-md-2 my-3">Georges Auguste Escoffier</h3>
 
-                <ul class="list-unstyled w3layouts-icons clients">
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star-half-o"></span>
-                        </a>
-                    </li>
-                </ul>
-                <p><span class="fa fa-quote-left"></span> Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut. <span class="fa fa-quote-right"></span></p>
+                
+                <p> "Life is like a box of macarons." </p>
 
             </div>
         </div>
@@ -170,6 +144,7 @@
         <div class="container pb-lg-3">
             <h3 class="tittle text-center">Popular Products</h3>
             <div class="row">
+                <br>
                 <div class="col-md-6 latest-left">
                     <div class="product-shoe-info shoe text-center">
                         <img src="{% static 'images/img1.jpg' %}" class="img-fluid" alt="">

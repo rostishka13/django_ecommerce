@@ -22,175 +22,30 @@
 
                     <div class="search-bar w3layouts-newsletter">
                         <h3 class="sear-head">Search Here..</h3>
-                        <form action="#" method="post" class="d-flex">
+                        <form action="{% url 'searching_result' %}" method=  "get" class="d-flex">
+
                             <input type="search" placeholder="Product name..." name="search" class="form-control" required="">
                             <button class="btn1"><span class="fa fa-search" aria-hidden="true"></span></button>
                         </form>
                     </div>
                     <!--preference -->
-                    <div class="left-side my-4">
-                        <h3 class="sear-head">Occasion</h3>
-                        <ul class="w3layouts-box-list">
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">Casuals</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">Party</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">Wedding</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">Ethnic</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- // preference -->
-                    <!-- discounts -->
-                    <div class="left-side">
-                        <h3 class="sear-head">Discount</h3>
-                        <ul class="w3layouts-box-list">
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">5% or More</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">10% or More</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">20% or More</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">30% or More</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">50% or More</span>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="checked">
-                                <span class="span">60% or More</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- //discounts -->
-                    <!-- reviews -->
-                    <div class="customer-rev left-side my-4">
-                        <h3 class="sear-head">Customer Review</h3>
-                        <ul class="w3layouts-box-list">
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span>5.0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star-o" aria-hidden="true"></span>
-                                    <span>4.0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star-half-o" aria-hidden="true"></span>
-                                    <span class="fa fa-star-o" aria-hidden="true"></span>
-                                    <span>3.5</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star-o" aria-hidden="true"></span>
-                                    <span class="fa fa-star-o" aria-hidden="true"></span>
-                                    <span>3.0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star" aria-hidden="true"></span>
-                                    <span class="fa fa-star-half-o" aria-hidden="true"></span>
-                                    <span class="fa fa-star-o" aria-hidden="true"></span>
-                                    <span class="fa fa-star-o" aria-hidden="true"></span>
-                                    <span>2.5</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- //reviews -->
+                    
                     <!-- deals -->
+                    <hr>
                     <div class="deal-leftmk left-side">
-                        <h3 class="sear-head">Special Deals</h3>
+                        <h3 class="sear-head">Special offers</h3>
+                        {% for offer in special_offers%}
                         <div class="special-sec1 row mb-3">
                             <div class="img-deals col-md-4">
-                                <img src="{% static 'images/s4.jpg' %}" class="img-fluid" alt="">
+                                <img src="{{offer.image.url}}" class="img-fluid" alt="">
                             </div>
                             <div class="img-deal1 col-md-4">
-                                <h3>Shuberry Heels</h3>
-                                <a href="#">$180.00</a>
+                                <h3>{{offer.title}}</h3>
+                                <a href="#">${{offer.price}}</a>
                             </div>
 
                         </div>
-                        <div class="special-sec1 row">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'images/s2.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>Chikku Loafers</h3>
-                                <a href="#">$99.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row my-3">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'images/s1.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>Bella Toes</h3>
-                                <a href="#">$165.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'images/s5.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>Red Bellies</h3>
-                                <a href="#">$225.00</a>
-                            </div>
-
-                        </div>
-                        <div class="special-sec1 row mt-3">
-                            <div class="img-deals col-md-4">
-                                <img src="{% static 'images/s3.jpg' %}" class="img-fluid" alt="">
-                            </div>
-                            <div class="img-deal1 col-md-8">
-                                <h3>(SRV) Sneakers</h3>
-                                <a href="#">$169.00</a>
-                            </div>
-
-                        </div>
+                        {% endfor %}
                     </div>
                     <!-- //deals -->
 
@@ -215,11 +70,12 @@
                                         <div class="grid-price">
                                             <span class="money">${{product.price}}</span>
                                         </div>
-                                    </div>
-                                    
+                                    </div>  
                                 </div>
                             </div>
+                            <br>
                         </div>
+
                         {% endfor %}
                     </div>
                     <div class="grid-img-right mt-4 text-right">
