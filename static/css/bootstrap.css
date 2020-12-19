@@ -480,10 +480,12 @@ mark,
 .img-fluid {
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 .img-fluid1{
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 .img-thumbnail {

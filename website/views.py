@@ -88,4 +88,7 @@ def searching_result(request):
 	context = {"products": qs,'special_offers':special_offers}
 	return render(request, 'website/search_bar.html', context)
 
+def cart(request):
+	return render(request, 'website/cart.html', {})
+
 

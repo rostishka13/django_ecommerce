@@ -62,11 +62,16 @@
                             <ul>
                                 <li><a href="{% url 'blog' %}">Blog</a></li>
                                 <li><a href="{% url 'shop' %}">Shop Now</a></li>
-                                <li><a href="#">Single Page</a></li>
+                                <li><a href="{% url 'contact' %}">Contact
+                        </a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                       
+                        <li><a href="{% url 'cart' %}"><img class = "cart_icon"src="{% static 'images/cart.png' %}" alt=""></i></a></li>
+                        
+
                     </ul>
+
                 </nav>
                 <!-- //nav -->
             </div>
