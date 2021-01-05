@@ -14,11 +14,11 @@ def about(request):
 	return render(request, 'website/about.html', context)
 
 
-def blog(request):
+# def blog(request):
 	
-	posts = Blog.objects.all()
-	context = {'posts': posts}
-	return render(request, 'website/blog.html', context)
+# 	posts = Blog.objects.all()
+# 	context = {'posts': posts}
+# 	return render(request, 'website/blog.html', context)
 
 
 def contact(request):
@@ -89,6 +89,7 @@ def searching_result(request):
 	return render(request, 'website/search_bar.html', context)
 
 def cart(request):
-	return render(request, 'website/cart.html', {})
-
-
+	context = {}
+	
+	
+	return render(request, 'website/cart.html', context)

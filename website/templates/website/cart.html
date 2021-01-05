@@ -8,12 +8,127 @@
         <li class="breadcrumb-item">
             <a href="{% url 'home' %}">Home</a>
         </li>
-        <li class="breadcrumb-item active">Shop Single</li>
+        <li class="breadcrumb-item active">Cart</li>
     </ol>
     <!---->
     <!-- banner -->
    <section>
-       
+       <div class="container">
+       	<br>
+       	<br>
+       	<a  class="btn btn-outline-dark" href="{% url 'home' %}">&#x2190; Continue Shopping</a>
+       	<h3 class="tittle text-center">Items in cart</h3>
+ 		
+ 			   <div class="row mt-lg-8">
+ 			   	
+                        <div class="col-md-2 footer-grid_section_w3layouts">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Items</h3>
+                            <ul class="list-unstyled w3layouts-icons">
+                                <li><p>product title</p></li>
+                            </ul>
+                        </div>
+              
+                        <div class="col-md-2 footer-grid_section_w3layouts">
+                            <!-- social icons -->
+                            <div class="agileinfo_social_icons">
+                                <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Unit Price</h3>
+                                <ul class="list-unstyled w3layouts-icons">
+
+                                    <li>
+                                       <p>$12</p>
+                                    </li>
+                                    <li class="mt-3">
+                                      <p>$12</p>
+                                    </li>
+                                    <li class="mt-3">
+                                       <p>$12</p>
+                                    </li>
+                                    <li class="mt-3">
+                                        <p>$12</p>
+                                    </li>
+                                    <li class="mt-3">
+                                       <p>$12</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- social icons -->
+                        </div>
+                        <div class="col-md-2 footer-grid_section_w3layouts">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Quantity</h3>
+                            <ul class="list-unstyled w3layouts-icons">
+                                <li>
+                                    <p>1</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>1</p>
+                                </li>
+                                <li class="mt-3">
+                                    <p>1</p>
+                                </li>
+                                <li class="mt-3">
+                                    <p>1</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>1</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-2 footer-grid_section_w3layouts">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Final Price</h3>
+                            <ul class="list-unstyled w3layouts-icons">
+                                <li>
+                                    <p>$12</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>$12</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>$12</p>
+                                </li>
+                                <li class="mt-3">
+                                    <p>$12</p>
+                                </li>
+                                <li class="mt-3">
+                                    <p>$12</p>
+                                </li>
+                            </ul>
+                        </div>
+ 			  	<div class="col-md-2 footer-grid_section_w3layouts">
+                            <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Remove</h3>
+                            <ul class="list-unstyled w3layouts-icons">
+                                <li>
+                                    <p>x</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>x</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>x</p>
+                                </li>
+                                <li class="mt-3">
+                                    <p>x</p>
+                                </li>
+                                <li class="mt-3">
+                                   <p>x</p>
+                                </li>
+                            </ul>
+
+                             
+                        </div>
+                <div class="col-md-2 footer-grid_section_w3layouts">
+                	<h3>Total: $200</h3>
+
+                	
+
+              	</div>
+
+              	<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'home' %}">Checkout</a>
+              	<br>	
+
+ 	</div>	
+
+
+
    </section>
     
 {% endblock %}

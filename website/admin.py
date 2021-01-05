@@ -4,4 +4,10 @@ from .models import *
 
 
 admin.site.register(Product)
-admin.site.register(Blog)
+#admin.site.register(Blog)
+admin.site.register(Customer)
+admin.site.register(Order)
+admin.site.register(OrderItem)
+admin.site.register(ShippingAddress)
+
+

@@ -1,0 +1,44 @@
+add_post.html
+{% extends 'website/main.html' %}
+{% load static %}
+
+
+{% block content %}
+<ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Blogs</li>
+    </ol>
+    <!---->
+    <!--// mian-content -->
+    <!-- banner -->
+    <section class="ab-info-main py-5">
+
+        <div class="container py-lg-3">
+            <div class="ab-info-grids">
+                <h3 class="tittle text-center mb-lg-5 mb-3">Blog Posts</h3>
+                <div id="products" class="row view-group">
+                       
+						<div class="mb-3">
+						<form method="POST">
+						    {% csrf_token %}
+						    {{form.media }}
+						    {{form.as_p}}
+
+						    <button class="btn btn-secondary">Post</button>
+						</form>
+						</div>
+                    <script>
+					    var name = "{{ user.id }}";
+					    document.getElementById("ident").value= name;
+
+					</script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+{% endblock %}
