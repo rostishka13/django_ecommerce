@@ -21,9 +21,13 @@
                         <img src="{{post.image.url}}" class="img-fluid" alt="user-image" />
                     </div>
                     <div class="col-md-12 events-info my-3">
-                       <small> <h3>{{post.title|title}}</h3> - {{post.author}}
+                       <small> <h3>{{post.title|title}}</h3>  <p>{{post.author}}</p>
                         
                         <p>{{post.public_date}}</p> </small>
+                         <small>
+                                <a class="btn btn-outline-secondary" href="{% url 'edit_post' post.pk %}">edit</a>
+                                <a class="btn btn-outline-danger" href="{% url 'delete_post' post.pk %}">delete</a>
+                        </small>
                     </div>
                     {{post.body}}
                 </div>

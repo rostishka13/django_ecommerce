@@ -21,4 +21,17 @@ class CreatePostView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'blog/add_post.html'
-    reverse_lazy = 'home_blog'
+    success_url = reverse_lazy('home_blog')
+
+
+class DeletePostView(DeleteView):
+	model = Post
+	template_name = 'blog/delete_post.html'
+	success_url = reverse_lazy('home_blog')
+
+class UpdatePostView(UpdateView):
+	model = Post
+	form_class = EditForm
+	template_name = 'blog/update_post.html'
+	success_url = reverse_lazy('home_blog')
+

@@ -1,4 +1,4 @@
-add_post.html
+
 {% extends 'website/main.html' %}
 {% load static %}
 
@@ -17,17 +17,19 @@ add_post.html
 
         <div class="container py-lg-3">
             <div class="ab-info-grids">
-                <h3 class="tittle text-center mb-lg-5 mb-3">Blog Posts</h3>
+                <h3 class="tittle text-center mb-lg-5 mb-3">Delete Post: {{post.title}}</h3>
                 <div id="products" class="row view-group">
                        
 						<div class="mb-3">
 						<form method="POST">
 						    {% csrf_token %}
-						    {{form.media }}
-						    {{form.as_p}}
-
-						    <button class="btn btn-secondary">Post</button>
+						    
+						    <h3>Are you sure?</h3>
+						    <br>
+						    <button  class="btn btn-outline-danger">Delete</button>
 						</form>
+																			
+
 						</div>
                     <!-- <script>
 					    var name = "{{ user.id }}";
@@ -42,3 +44,4 @@ add_post.html
     
     
 {% endblock %}
+delete_post.html
