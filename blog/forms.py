@@ -32,3 +32,18 @@ class EditForm(forms.ModelForm):
             #'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
 
         }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ("name", "body")
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Input name'}),
+            #'email': forms.Textarea(attrs={'class': 'form-control','placeholder': 'Input your email'}),
+
+            #'author': forms.Select(attrs={'class': 'form-control','placeholder': 'Input author'}),
+            'body': forms.Textarea(attrs={'class': 'form-control','placeholder': 'Input your comment'}),
+
+        }

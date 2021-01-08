@@ -64,6 +64,12 @@
                                 <li><a href="{% url 'home_blog' %}">Blog</a></li>
                                 <li><a href="{% url 'shop' %}">Shop Now</a></li>
                                   <li><a href="{% url 'contact' %}">Contact</a></li>
+                                   {% if user.is_authenticated%}
+                                        <li><a href="{% url 'logout' %}"> Logout</a></li>
+                                  {% else %}
+                                          <li><a href="{% url 'login' %}"> Login</a></li>
+                                          <li><a href="{% url 'sign_up' %}">Sign Up</a></li>
+                                  {% endif%}  
                             </ul>
                         </li>
                         <li><a href="{% url 'cart' %}"><img class = "cart_icon"src="{% static 'images/cart.png' %}" alt=""></i></a></li>

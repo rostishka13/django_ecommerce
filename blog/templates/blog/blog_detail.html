@@ -43,8 +43,12 @@
                     <!-- contact form grid -->
                     <div class="contact-single">
                         <h3><span class="sub-tittle">01</span> Leave a Reply</h3>
-                        <form action="#" method="get" class="mt-4">
-                            <div class="form-group">
+                       <!--  <form action="#" method="post" class="mt-4">
+                            {% csrf_token %}
+                            {{form.media }}
+                            {{form.as_p}} -->
+
+                            <!-- <div class="form-group">
                                 <label for="contactcomment">Your Comment *</label>
                                 <textarea class="form-control border" rows="5" id="contactcomment" required=""></textarea>
                             </div>
@@ -56,17 +60,31 @@
                                 <div class="col-sm-6 form-group ml-sm-3">
                                     <label for="contactemail">Email *</label>
                                     <input type="email" class="form-control border" id="contactemail" required="">
-                                </div>
+                                </div> -->
                             </div>
-                            <button type="submit" class="mt-3 btn btn-success btn-block py-3">Post Comment</button>
+                            <a href="{% url 'add_comment' post.pk%}" class="mt-3 btn btn-success btn-block py-3">Comment Post</a>
+                            <!-- <button type="submit" class="mt-3 btn btn-success btn-block py-3"> Comment Post </button> -->
                         </form>
                     </div>
                     <!--  //contact form grid ends here -->
                 </div>
                 <div class="media py-5">
-                    <img src="{% static 'images/te2.jpg' %}" class="mr-3 img-fluid rounded-circle" alt="image">
+                    <!-- <img src="{% static 'images/te2.jpg' %}" class="mr-3 img-fluid rounded-circle" alt="image"> -->
                     <div class="media-body">
-                        <h5 class="mt-0">Daniel Doe</h5>
+                        <h2>Comments:</h2>
+                            {% if not post.comments.all %}
+                                     No Comments yet... 
+                            {% else %}
+                                    {% for comment in post.comments.all %}
+                                            <small>
+                                                {{comment.name}} -
+                                                {{comment.date_added}}
+                                            </small>
+                                                <p>{{comment.body}}</p>
+                                    {% endfor %}
+
+                            {% endif %}
+                        <!-- <h5 class="mt-0">Daniel Doe</h5>
                         <p class="mt-2">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
                         </p>
                         <div class="media mt-5">
@@ -77,7 +95,7 @@
                                 <h5 class="mt-0">Leia Organa</h5>
                                 <p class="mt-2"> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla..</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
