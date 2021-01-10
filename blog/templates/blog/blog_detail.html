@@ -31,6 +31,24 @@
                     </div>
                     {{post.body}}
                 </div>
+                <br>
+                <hr>
+                <!-- like section -->
+                <form action="{% url 'like_post' post.pk %}" method="post">
+                    {% csrf_token %}
+
+                    {% if liked %}
+                        <button type="submit", name="post_id", value="{{ post.id}}", class="btn btn-danger btn-sm">Unlike</button> 
+                    {% else %}
+                        <button type="submit", name="post_id", value="{{ post.id}}", class="btn btn-primary btn-sm">Like</button> 
+                    {% endif %}
+
+
+
+                    - {{ total_likes}} Likes
+                </form>
+                <hr>
+                <br>
                 <div class="row my-lg-5 my-3">
                     <div class="col-md-6 text-info">
                         <p>Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor elementum id enim volutpat...</p>

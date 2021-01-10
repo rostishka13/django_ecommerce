@@ -54,17 +54,20 @@
                     <ul class="menu mt-2">
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li class="active"><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'home_blog' %}">Blog</a></li>
+                         {% if user.is_authenticated%}
+                            <li><a href="{% url 'home_blog' %}">Blog</a></li>
+                         {% endif %}   
                         <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
                             <a href="#">Drop Down <span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
-                                <li><a href="{% url 'home_blog' %}">Blog</a></li>
+                                
                                 <li><a href="{% url 'shop' %}">Shop Now</a></li>
                                   <li><a href="{% url 'contact' %}">Contact</a></li>
                                    {% if user.is_authenticated%}
+                                        <li><a href="{% url 'home_blog' %}">Blog</a></li>
                                         <li><a href="{% url 'logout' %}"> Logout</a></li>
                                   {% else %}
                                           <li><a href="{% url 'login' %}"> Login</a></li>
