@@ -15,7 +15,7 @@ class Post(models.Model):
     public_date = models.DateTimeField(auto_now_add=True)
     # category = models.CharField(max_length=255, default='coding')
     likes = models.ManyToManyField(User, related_name='blog_posts')
-
+     
 
     def total_likes(self):
         return self.likes.count()
